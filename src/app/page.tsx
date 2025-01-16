@@ -3,6 +3,8 @@ import { getCharactersByCastType } from './service/CharacterService';
 import { Banner } from './components/Banner';
 import { MovieRow } from './components/MovieRow';
 import { getBannerInfo } from './service/ApiBannerRequest';
+import { CharactersDetail } from './components/modal/CharactersDetail';
+import { CastDetails } from './types/character';
 
 export default async function Home() {
   const castTypes = ['Students', 'Staff'];
@@ -10,7 +12,8 @@ export default async function Home() {
   const characters = await Promise.all(
     castTypes.map(async (cast) => {
       const characters = await getCharactersByCastType(cast);
-      return { sectionTitle: cast, characters };
+      const castDetails: CastDetails = { sectionTitle: cast, characters };
+      return castDetails;
     })
   );
   return (
@@ -27,6 +30,7 @@ export default async function Home() {
           ))}
         </main>
       </div>
+      <CharactersDetail movies={characters} />
     </Suspense>
   );
 }

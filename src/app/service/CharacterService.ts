@@ -7,9 +7,6 @@ export const getCharacterById = async (id: string): Promise<Character> => {
   return apiRequest(`${basePathApiCharacters}/${encodeURIComponent(id)}`);
 };
 
-export const getCharactersByCastType = async (
-  id: string
-): Promise<Characters> => {
-  console.log(`${basePathApiCharacters}/${encodeURIComponent(id)}`);
+export const getCharactersByCastType = async (id: string): Promise<Characters> => {
   return apiRequest(`${basePathApiCharacters}/${encodeURIComponent(id)}`);
 };

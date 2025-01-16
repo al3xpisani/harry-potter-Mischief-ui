@@ -1,13 +1,13 @@
 import { Character } from '../types/character';
 import {
   ChevronDownIcon,
-  PlayIcon,
   PlusIcon,
   InformationCircleIcon,
   UserGroupIcon,
 } from '@heroicons/react/24/outline';
 import { HeartIcon as SolidHeartIcon } from '@heroicons/react/24/solid';
 import { MovieRating } from './MovieRating';
+import Link from 'next/link';
 
 interface MovieInfoProps {
   movie: Character;
@@ -24,7 +24,9 @@ export const MovieInfo = ({
     <div className='flex flex-row items-center justify-between gap-2'>
       <div className='flex flex-row items-center gap-2'>
         <div className='flex h-6 w-6 cursor-pointer items-center justify-center rounded-full bg-transparent transition hover:bg-neutral-300 hover:text-black lg:h-10 lg:w-10'>
-            <PlayIcon className='w-4 lg:w-6' />
+          <Link href={`?popupcharacterdetail=${movie.id}`}>
+            <InformationCircleIcon className='w-4 lg:w-6' />
+          </Link>
         </div>
         <div
           className='flex h-6 w-6 scale-100 cursor-pointer items-center justify-center bg-transparent opacity-100 transition delay-100 duration-100 hover:text-red-500 lg:h-10 lg:w-10'

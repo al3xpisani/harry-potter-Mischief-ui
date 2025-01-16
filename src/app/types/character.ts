@@ -1,7 +1,7 @@
 export type Character = {
   id: string;
   name: string;
-  alternateNames: string[];
+  alternate_names: string[];
   species: string;
   gender: string;
   house: string;
@@ -16,7 +16,7 @@ export type Character = {
   hogwartsStudent: boolean;
   hogwartsStaff: boolean;
   actor: string;
-  alternateActors: string[];
+  alternate_actors: string[];
   alive: boolean;
   image: string;
   rating: string;
@@ -36,5 +36,7 @@ export type BannerImageDetails = {
   name: string;
   description: string;
 };
+
+export type CastDetails = { sectionTitle: string; characters: Characters };
 
 export type Characters = Character[];
