@@ -16,7 +16,7 @@ export function MovieRow({ sectionTitle, movies }: MovieRowProps) {
       </div>
       <div className='grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-8'>
         {movies
-          .filter((m) => m.image)
+          // .filter((m) => m.image)
           .map((movie, index) => (
             <MovieCard key={index} movie={movie} />
           ))}

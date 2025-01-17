@@ -15,11 +15,7 @@ interface MovieInfoProps {
   isFavorited: boolean;
 }
 
-export const MovieInfo = ({
-  movie,
-  toggleFavorite,
-  isFavorited,
-}: MovieInfoProps) => (
+export const MovieInfo = ({ movie, toggleFavorite, isFavorited }: MovieInfoProps) => (
   <div className='absolute z-10 w-full rounded-b-md bg-zinc-800 p-2 shadow-md transition lg:p-4'>
     <div className='flex flex-row items-center justify-between gap-2'>
       <div className='flex flex-row items-center gap-2'>
@@ -45,13 +41,12 @@ export const MovieInfo = ({
     </div>
 
     <div className='mt-4 text-sm font-bold text-white lg:text-lg'>
-      {movie.image === '' ? 'No Image found' : movie.name}
+      {movie.name}
     </div>
 
     <div className='mt-4 flex flex-col gap-2 text-sm'>
       <div className='flex flex-row items-center gap-2'>
-        <InformationCircleIcon className='w-4' />{' '}
-        {movie.image === '' ? '' : movie.house} house
+        <InformationCircleIcon className='w-4' /> {movie.house} house
         <InformationCircleIcon className='w-4' />{' '}
         {movie.ancestry === '' ? '' : movie.ancestry} ancestry
       </div>
