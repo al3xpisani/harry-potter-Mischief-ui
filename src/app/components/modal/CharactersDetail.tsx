@@ -5,14 +5,18 @@ import Image from 'next/image';
 import { CharacterModal } from './CharacterModal';
 import { CastDetails } from '@/app/types/character';
 
-export const CharactersDetail = ({ movies }: { movies: CastDetails[] }) => {
+export const CharactersDetail = ({
+  characters,
+}: {
+  characters: CastDetails[];
+}) => {
   const router = useRouter();
   const params = useSearchParams();
   const popupCharacterID = params.get('popupcharacterdetail') || '';
   const closeModal = () => {
     router.push('/');
   };
-  const getCharacterInfo = movies
+  const getCharacterInfo = characters
     .map((charTypes) => {
       return charTypes.characters.filter((m) => m.id === popupCharacterID);
     })

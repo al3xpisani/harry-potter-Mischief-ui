@@ -1,12 +1,12 @@
 import { Characters } from '../types/character';
-import { MovieCard } from './MovieCard';
+import { CharacterCard } from './CharacterCard';
 
-type MovieRowProps = {
+type CharacterRowProps = {
   sectionTitle: string;
-  movies: Characters;
+  characters: Characters;
 };
 
-export function MovieRow({ sectionTitle, movies }: MovieRowProps) {
+export function CharacterRow({ sectionTitle, characters }: CharacterRowProps) {
   return (
     <div className='flex-col space-y-2'>
       <div className='flex'>
@@ -15,10 +15,10 @@ export function MovieRow({ sectionTitle, movies }: MovieRowProps) {
         </h2>
       </div>
       <div className='grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-8'>
-        {movies
+        {characters
           // .filter((m) => m.image)
-          .map((movie, index) => (
-            <MovieCard key={index} movie={movie} />
+          .map((character, index) => (
+            <CharacterCard key={index} character={character} />
           ))}
       </div>
     </div>

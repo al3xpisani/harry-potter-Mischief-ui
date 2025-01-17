@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { getCharactersByCastType } from './service/CharacterService';
 import { Banner } from './components/Banner';
-import { MovieRow } from './components/MovieRow';
+import { CharacterRow } from './components/CharacterRow';
 import { getBannerInfo } from './service/ApiBannerRequest';
 import { CharactersDetail } from './components/modal/CharactersDetail';
 import { CastDetails } from './types/character';
@@ -22,15 +22,15 @@ export default async function Home() {
         <main className='relative overflow-y-scroll p-8 pb-20 scrollbar-hide lg:px-16'>
           <Banner bannerDetails={bannerDetails} />
           {characters.map((character, index) => (
-            <MovieRow
+            <CharacterRow
               key={index}
               sectionTitle={character.sectionTitle}
-              movies={character.characters}
+              characters={character.characters}
             />
           ))}
         </main>
       </div>
-      <CharactersDetail movies={characters} />
+      <CharactersDetail characters={characters} />
     </Suspense>
   );
 }

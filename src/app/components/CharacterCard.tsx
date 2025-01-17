@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 
 import Image from 'next/image';
 import { Character } from '../types/character';
-import { MovieInfo } from './MovieInfo';
+import { CharacterInfo } from './CharacterInfo';
 import Link from 'next/link';
 
-export const MovieCard = ({ movie: character }: { movie: Character }) => {
+export const CharacterCard = ({ character }: { character: Character }) => {
   const [isFavorited, setIsFavorited] = useState(false);
   const toggleFavorite = () => setIsFavorited((prev) => !prev);
 
@@ -38,8 +38,8 @@ export const MovieCard = ({ movie: character }: { movie: Character }) => {
             className={`${character.image === '' ? 'border-double opacity-70' : 'opacity-100'} duration h-[12vw] w-full cursor-pointer rounded-t-md object-cover object-top shadow-xl transition`}
           />
         </Link>
-        <MovieInfo
-          movie={character}
+        <CharacterInfo
+          character={character}
           toggleFavorite={toggleFavorite}
           isFavorited={isFavorited}
         />
