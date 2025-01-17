@@ -20,6 +20,9 @@ export const MovieCard = ({ movie }: { movie: Character }) => {
           height={400}
           className={`${movie.image === '' ? 'border-double opacity-10' : 'opacity-100'} h-full w-full rounded-md object-cover object-center transition`}
         />
+        <div className='absolute bottom-4 left-1/2 -translate-x-1/2 transform rounded px-4 py-2 text-lg font-bold text-white opacity-50'>
+          {movie.name || 'Unknown Actor'}
+        </div>
       </Link>
       <div
         className={`invisible absolute top-0 z-10 w-full min-w-[20vw] scale-0 opacity-0 transition delay-300 duration-200 group-hover:-translate-y-[6vw] group-hover:scale-110 group-hover:opacity-100 sm:visible`}
